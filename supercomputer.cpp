@@ -31,6 +31,7 @@ void intersection(int arr1[],int a,int b,int* h, int m){/*
             k++;
         }
     }
+    if(k==0){h[0]=h[1]=0;}
 }
 int main(){
     #ifndef ONLINE_JUDGE
