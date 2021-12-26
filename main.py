@@ -4,6 +4,8 @@ import os
 def creat_dir(origin, elements):
     for element in elements:
         os.mkdir(f"{origin}/{element}")
+        with open(f"{origin}/{element}" + "/README.md", "w") as f:
+            f.write(element)
 
 
 user = [
