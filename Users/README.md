@@ -9,3 +9,5 @@ The personnal folder structure must follow the this structure :
   - EXEMPLES
     - Omar_and_Circles_arena
     - Intersection_of_Two_Arrays_II_leetcode
+- An extra file named editorial.md can be added this file shoud contain the solution explanation
+- Extra ressources can be provided in the editorial file
