@@ -92,11 +92,14 @@ int main(){
             if(v[f[aa]-min]) v[f[aa]-min]=0; else v[f[aa]-min]=1;
             aa++;
         }else{
-            intersection(nf,nc[u],nc[u+1],h,w);u=u+2;
+            if((h[0]==0)&&(h[1]==0)){
+                cout<<0<<endl;
+            }else{
             for(int i=h[0]-min;i<=h[1]-min;i++){
                 if(v[i]) number++;
             }
             cout<<number<<endl;
+            }
         }
         number=0;
     }
