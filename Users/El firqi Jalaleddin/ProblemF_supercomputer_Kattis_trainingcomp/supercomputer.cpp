@@ -1,11 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std;
+void swap(int *xp, int *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+void bubbleSort(int arr[], int n){
+    int i, j;
+    for (i = 0; i < n-1; i++)     
+    // Last i elements are already in place
+    for (j = 0; j < n-i-1; j++)
+        if (arr[j] > arr[j+1])
+            swap(&arr[j], &arr[j+1]);
+}
 void intersection(int arr1[],int a,int b,int* h, int m){/*
     int arr[7]={1,2,3,4,5,6,7};
     intersection(arr,3,10,h,7);
     cout<<h[0]<<h[1];
     result is 37
-*/
+*/  bubbleSort(arr1,m);
     int i = 0, j = 0;
     int n=b-a+1;
     int arr2[n];
@@ -53,7 +67,6 @@ int main(){
     for(int i=0;i<k;i++){//testing and assigning the variables
         if(g=='F'){ 
             cin>>f[w];
-            p[i]=0;
             w++;//to count flip operatiosn number
         }else{
             p[i]=1;
@@ -80,13 +93,13 @@ int main(){
     min=nf[0];
     for(int i=1;i<w;i++){//determining the actual bits affected 
         if(nf[i]>max)max=nf[i];
-        if(nf[i]<min)min=nf[i];
+        else min=nf[i];
     }
-    s=abs((min-max))+1;//the actual number of bits that will be counted
+    s=(max-min)+1;//the actual number of bits that will be counted
     int v[s]={0};//declaring an array of size of active bits
     for(int q=0;q<k;q++){
         if(!p[q]){// if p[i]=0 then it is a flip operation so we need "!"to use it 
-            if(v[f[aa]-min]) v[f[aa]-min]=0; else v[f[aa]-min]=1;
+            if(v[nf[aa]-min]==1) v[nf[aa]-min]=0; else v[nf[aa]-min]=1;
             aa++;
         }else{
             intersection(nf,nc[u],nc[u+1],h,w);u=u+2;
@@ -94,7 +107,7 @@ int main(){
                 cout<<0<<endl;
             }else{
             for(int i=h[0]-min;i<=h[1]-min;i++){
-                if(v[i]) number++;
+                if(v[i]==1) number++;
             }
             cout<<number<<endl;
             }
