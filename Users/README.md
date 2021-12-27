@@ -4,7 +4,7 @@ The users Folder contains every user's submission
 The personnal folder structure must be as follows :
 
 - Available platforms Arena Moi (arena) and LeetCode (leetcode)
-
+- Do not edit an other user's folder
 - each submission must be in a folder with the same name as the probleme followed by the platform name (no space)
   - EXEMPLES
     - Omar_and_Circles_arena
