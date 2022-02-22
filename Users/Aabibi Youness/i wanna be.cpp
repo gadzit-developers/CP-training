@@ -1,28 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-struct pokemone{
+struct pokemons{
     int id;
     unsigned int atk,def,heal;
 };
 
-bool sortatk(pokemone a,pokemone b){
+bool sortatk(pokemons a,pokemons b){
     return (a.atk>b.atk)?true:false;
 }
-bool sortdef(pokemone a,pokemone b){
+bool sortdef(pokemons a,pokemons b){
     return (a.def>b.def)?true:false;
 }
 
-bool sortheal(pokemone a,pokemone b){
+bool sortheal(pokemons a,pokemons b){
     return (a.heal>b.heal)?true:false;
 }
 
 int main(){
     int n;cin>>n;
     int h;cin>>h;
-    vector<pokemone>poke;
+    vector<pokemons>poke;
     for (int i=0;i<n;i++){
-        pokemone pok;
+        pokemons pok;
         cin>>pok.atk;
         cin>>pok.def;
         cin>>pok.heal;
